@@ -17,7 +17,7 @@ const LazyFeaturedItems = dynamic(()=> import("../components/FeaturedItems"),{
 const Home = ({ bannerData, featuredItems, categoryMenuItems }) => {
 	return (
 		<>
-			<HeroBanner heroBannerData={bannerData.length && bannerData} />
+			<HeroBanner heroBannerData={bannerData || []} />
 			<Link href={`/shop`}>
 				<motion.div
 					initial={{translateY:50, opacity: 0 }}
@@ -28,13 +28,14 @@ const Home = ({ bannerData, featuredItems, categoryMenuItems }) => {
 					}}
 					className="link-search-products-container"
 				>
-					<div className="checkout-products">Checkout our products!</div>
+					<div className="checkout-products">Discover Our Collections</div>
 					<BsArrowRightCircle className="checkout-arrow-icon" />
 				</motion.div>
 			</Link>
 			<CategoryMenu categoryMenuItems={categoryMenuItems} />
+			<div className="section-title">Traditional Treasures</div>
 			<LazyFeaturedItems featuredItems={featuredItems} />
-			<FooterBanner footerBanner={bannerData && bannerData[1]} />
+			<FooterBanner footerBanner={bannerData?.[1]} />
 		</>
 	);
 };

@@ -5,6 +5,11 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 const HeroBanner = ({ heroBannerData }) => {
+
+	// Defensive guard: if data is not provided or empty, don't attempt to render
+	if (!heroBannerData || !Array.isArray(heroBannerData) || heroBannerData.length === 0) {
+		return null;
+	}
 	const [heroItem, setHeroItem] = useState(0);
 	const [direction, setDirection] = useState(1);
 

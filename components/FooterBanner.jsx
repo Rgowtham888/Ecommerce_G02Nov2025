@@ -3,8 +3,10 @@ import Link from "next/link";
 import { urlFor } from "../lib/client";
 import { motion } from "framer-motion";
 
-const FooterBanner = ({
-	footerBanner: {
+const FooterBanner = ({ footerBanner }) => {
+	if (!footerBanner) return null;
+	
+	const {
 		largeText1,
 		largeText2,
 		smallText,
@@ -13,8 +15,8 @@ const FooterBanner = ({
 		image,
 		desc,
 		slug,
-	},
-}) => {
+	} = footerBanner;
+
 	return (
 		<motion.div
 		initial={{ opacity: 0, translateY: 50 }}
@@ -34,7 +36,13 @@ const FooterBanner = ({
 					</Link>
 				</div>
 			</div>
-			<img src={urlFor(image)} className="footer-banner-image" alt="" />
+			{image && (
+				<img 
+					src={urlFor(image)} 
+					className="footer-banner-image" 
+					alt={largeText1 || 'footer banner'} 
+				/>
+			)}
 		</motion.div>
 	);
 };

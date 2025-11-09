@@ -4,16 +4,15 @@ import { urlFor } from "../lib/client";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { motion } from "framer-motion";
 
-const Item = ({
-	product: { image, name, slug, price, manufacturer },
-	rotate = false,
-}) => {
+const Item = ({ product, rotate = false }) => {
+	if (!product) return null;
+	const { image, name, slug, price, manufacturer } = product;
 	return (
 		<div>
 			<Link href={`/product/${slug.current}`}>
 				<div className="featured-product-card">
 					<img
-						src={urlFor(image && image[0])}
+						src={image && image[0] ? urlFor(image[0]) : ''}
 						width={250}
 						height={250}
 						className={
@@ -21,14 +20,14 @@ const Item = ({
 								? "featured-product-image rotate"
 								: "featured-product-image"
 						}
-						alt=""
+						alt={name || ''}
 					/>
 					<p className="featured-product-name">{name}</p>
 					<p className="featured-product-manufacturer">{manufacturer}</p>
 					<p className="featured-product-price">${price}</p>
 					<div className="featured-product-button-container">
 						<BsArrowRightCircle className="featured-arrow-icon" />
-						<div className="featured-product-button-text">Buy Now!</div>
+						<div className="featured-product-button-text">View Details</div>
 					</div>
 				</div>
 			</Link>

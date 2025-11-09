@@ -4,7 +4,9 @@ import Link from "next/link";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { motion } from "framer-motion";
 
-const MenuItem = ({ category, product: { image, price }, top, right }) => {
+const MenuItem = ({ category, product, top, right }) => {
+    if (!product) return null;
+    const { image, price } = product;
 	return (
 		<>
 			<div className="category-menu-item">
@@ -20,9 +22,9 @@ const MenuItem = ({ category, product: { image, price }, top, right }) => {
 				</Link>
 
 				<img
-					src={urlFor(image && image[0])}
+					src={image && image[0] ? urlFor(image[0]) : ''}
 					className="category-item-image"
-					alt=""
+					alt={category || ''}
 					style={{ right, top }}
 				/>
 			</div>

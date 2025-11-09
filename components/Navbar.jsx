@@ -67,49 +67,49 @@ const Navbar = () => {
 					className="logo-container"
 				>
 					<img src="/logo.png" alt="" className="logo" />
-					<div className="navbar-shop-name">AwesomeGear</div>
+					<div className="navbar-shop-name">Bhuvaneshwari vastram</div>
 				</motion.div>
 			</Link>
 			<div className="navbar-buttons-container">
-				<Link href={`/shop?category=Mouse`}>
+				<Link href={`/shop?category=Sarees`}>
 					<motion.div
 						initial={{ translateY: -25, opacity: 0 }}
 						animate={{ translateY: 0, opacity: 1 }}
 						transition={{ duration: 0.09, delay: 0.25 }}
 						className="navbar-button"
 					>
-						Mice
+						Sarees
 					</motion.div>
 				</Link>
 
-				<Link href={`/shop?category=Keyboard`}>
+				<Link href={`/shop?category=MiniatureToys`}>
 					<motion.div
 						initial={{ translateY: -25, opacity: 0 }}
 						animate={{ translateY: 0, opacity: 1 }}
 						transition={{ duration: 0.09, delay: 0.34 }}
 						className="navbar-button"
 					>
-						Keyboards
+						Miniature Toys
 					</motion.div>
 				</Link>
-				<Link href={`/shop?category=Headset`}>
+				<Link href={`/shop?category=Apparels`}>
 					<motion.div
 						initial={{ translateY: -25, opacity: 0 }}
 						animate={{ translateY: 0, opacity: 1 }}
 						transition={{ duration: 0.09, delay: 0.43 }}
 						className="navbar-button"
 					>
-						Headsets
+						Apparels
 					</motion.div>
 				</Link>
-				<Link href={`/shop?category=Mousepad`}>
+				<Link href={`/shop?category=NewArrivals`}>
 					<motion.div
 						initial={{ translateY: -25, opacity: 0 }}
 						animate={{ translateY: 0, opacity: 1 }}
 						transition={{ duration: 0.09, delay: 0.52 }}
 						className="navbar-button"
 					>
-						Mouse pads
+						New Arrivals
 					</motion.div>
 				</Link>
 			</div>

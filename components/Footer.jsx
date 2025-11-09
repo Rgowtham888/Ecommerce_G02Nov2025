@@ -4,11 +4,11 @@ import { AiFillGithub } from "react-icons/ai";
 const Footer = () => {
 	return (
 		<div className="footer-container">
-			<p>Site made by Vladimir Infante</p>
-			<p>Copyright © 2023 Awesome Gear. All rights reserved</p>
+			<p>Site made by Gowtham</p>
+			<p>Copyright © 2025 Bhuvaneshwari Vastram. All rights reserved</p>
 			<p className="icons">
 				<a
-					href="https://github.com/InfVlad"
+					href="https://github.com/Rgowtham888"
 					target="_blank"
 					rel="noopener noreferrer"
 					aria-label="If you wanna know more about the developer checkout the github page"
