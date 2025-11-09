@@ -33,7 +33,7 @@ const Home = ({ bannerData, featuredItems, categoryMenuItems }) => {
 				</motion.div>
 			</Link>
 			<CategoryMenu categoryMenuItems={categoryMenuItems} />
-			<div className="section-title">Traditional Treasures</div>
+			<div className="section-title"></div>
 			<LazyFeaturedItems featuredItems={featuredItems} />
 			<FooterBanner footerBanner={bannerData?.[1]} />
 		</>

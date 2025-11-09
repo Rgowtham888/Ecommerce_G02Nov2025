@@ -43,8 +43,14 @@ const FeaturedItems = ({ featuredItems }) => {
 			whileInView={{ translateY: 0, opacity: 1 }}
 			className="featured-items-container"
 		>
-			<div className="featured-top-text">Featured Gears:</div>
+			<div className="featured-top-text">Traditional Treasures:</div>
 			<div className="featured-bg-text">FEATURED</div>
+			{/* Saree gallery - three images side-by-side from /public */}
+			<div className="featured-saree-banner">
+				<img src="/saree1.png" alt="Saree 1" className="featured-saree-image" />
+				<img src="/saree2.png" alt="Saree 2" className="featured-saree-image" />
+				<img src="/saree3.png" alt="Saree 3" className="featured-saree-image" />
+			</div>
 			<Item product={featuredItems[0]} />
 			<Item product={featuredItems[1]} rotate={true} />
 			<Item product={featuredItems[2]} />
